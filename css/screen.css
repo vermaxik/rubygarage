@@ -1,0 +1,33 @@
+body {
+     margin: 0;
+     background-image: url('../img/background.jpg');
+     background-size: 1680px 1050px;
+     background-position: top center;
+     background-repeat:no-repeat;
+     display: compact;
+}
+#login {
+    position:absolute;
+    left:50%;
+    margin-left:-100px;
+    top:50%;
+    color:#fff;
+    margin-top: -200px;
+}
+
+#register {
+    position:absolute;
+    left:50%;
+    margin-left:-100px;
+    margin-top: -150px;
+    top:50%;
+    color:#fff;
+    display:none;
+}
+
+input.error {
+	border: 2px solid #FF4800;
+}
+
+input:required:invalid, input:focus:invalid {  background-repeat: no-repeat; -moz-box-shadow: none; } 
+input:required:valid { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACZSURBVHjaYvz//z8D0YCJgRRATdWHGkxAIHrhI4KqgUqLtoBZNyfPO4Ss+tHChYdwKAUCn74GOwgLGCYH643BIGrBw/9gABMAg/qD/+GABWjMPqghNycHRTOsS78fhGzqGZixIMAICu9HC6ODJt/EcDiaUpi75eKXrstVJ6QU6m4oeLggCptbkQEDCg+sAZdSIGAcNOkEIMAApiWYc1lb484AAAAASUVORK5CYII='); background-position: right top; background-repeat: no-repeat; }

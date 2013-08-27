@@ -1,0 +1,30 @@
+create table access
+	(user_id int(3) unsigned NOT NULL,
+	project_id int(3) unsigned NOT NULL
+	);
+
+create table users
+	(user_id int(3) unsigned NOT NULL AUTO_INCREMENT,
+	login  varchar(12) NULL,
+	passwd  varchar(32) NULL,
+	name varchar(20) NULL,
+	mail varchar(30) NULL,
+	date_log datetime NULL,
+	PRIMARY KEY(user_id)
+	);
+
+create table project
+	(project_id int(5) unsigned NOT NULL AUTO_INCREMENT,
+	project_name varchar(150) NULL,
+	PRIMARY KEY(project_id)
+	);
+
+create table tasks
+	(task_id int(7) unsigned NOT NULL AUTO_INCREMENT,
+	project_id int(7) NULL,
+	task_name varchar(225),
+	status enum('0','1'),
+	PRIMARY KEY(task_id)
+	);
+
+ALTER TABLE `tasks` CHANGE `status` `status` ENUM( '0', '1' )  NOT NULL DEFAULT '0';
