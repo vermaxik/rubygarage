@@ -16,6 +16,21 @@ DataMapper.finalize
 
 enable :sessions
 
+def checkUser(login,passwd)
+  begin
+    require 'digest/md5'
+    user = User.first(:login => login)
+    passwd_with_salt_md5 = Digest::MD5::hexdigest(passwd+user[:salt].to_s)
+    if passwd_with_salt_md5 == user[:passwd]
+      session['login'] = user[:login]
+      User.update(:visitors => user[:visitors]+1 )
+      redirect '/'
+    end
+  rescue 
+    redirect '/login/error'
+  end
+end
+
 get "/"  do
   @title = "Main Page"
   if(session['login']) 
@@ -42,22 +57,7 @@ end
 
 post '/login' do
   unless params[:login].empty? && params[:passwd].empty?
-    user = User.first(:login => params[:login])
-    if(user)
-      require 'digest/md5'
-      passwd_with_salt_md5 = Digest::MD5::hexdigest(params[:passwd]+user[:salt].to_s)
-      if passwd_with_salt_md5 == user[:passwd]
-        
-        session['login'] = user[:login]
-        User.update(:visitors => user[:visitors]+1 )
-        
-        redirect '/'
-      else
-        redirect '/login/error'
-      end
-    else 
-      redirect '/login/error'
-    end
+    checkUser(params[:login], params[:passwd])
   else
     redirect '/login/error'
   end
