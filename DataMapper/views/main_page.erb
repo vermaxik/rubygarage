@@ -1,0 +1,8 @@
+<center>
+	<h1>Hi, <%= @user_name %></h1>
+	<font color=#fff>
+		Your profil created: <%=  @user[:d_create].strftime("%d.%m.%Y") %> in <%=  @user[:d_create].strftime("%H:%I") %> <br/>
+		You have <%= @user[:visitors] %> visitors</font>
+		<br/><br/>
+		<a href="/login"  class="btn btn-mini" >LOGOUT</a>
+</center>

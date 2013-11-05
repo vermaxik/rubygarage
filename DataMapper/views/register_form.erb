@@ -1,0 +1,12 @@
+<div class="form row" align="center">
+	<strong>Register Form</strong><br>
+	<%= @error %>
+	<form action="/register" method="post">
+		<input name="login" type="text" placeholder="Login"  /> <br />
+	    <input name="passwd" type="password" placeholder="Password"  /> <br />
+	    <input name="passwd_rp"type="password" placeholder="Repeat password"  /> <br />
+	    <input type="submit" value="SIGN UP" class="btn btn-inverse" />
+	    <br><br>
+	    <a href="/login"  class="btn btn-mini" >BACK TO LOGIN FORM</a>
+	</form>
+</div>

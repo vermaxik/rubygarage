@@ -1,0 +1,20 @@
+body{
+		margin: 0;
+		background-color: #333
+}
+
+.form {
+	position: absolute;
+	left: 50%;
+	top:50%;
+	color:#fff;
+	margin-left:-100px;
+	margin-top: -70px;
+}
+.form form {
+	margin: 0;  padding: 0; 
+}
+
+h1 {
+	color:#fff;
+}

@@ -1,0 +1,10 @@
+<div class="form row" align="center">
+	<strong>Please input:</strong><br>
+	<%= @error %>
+	<form action="/login" method="post">
+			<input name="login" type="text" placeholder="Login"  /> <br />
+	    <input name="passwd" type="password" placeholder="Password"  /> <br />
+	    <input type="submit" value="SIGN IN" class="btn btn-primary" />
+	    or <a href="/register" class="btn btn-inverse">SIGN UP</a>
+	</form>
+</div>
