@@ -1,3 +1,3 @@
 Learn Ruby/Rails
-Sinatra, RSpec, Rake
-RubyKoans
+Sinatra, RSpec, Rake 
+RubyKoans 
